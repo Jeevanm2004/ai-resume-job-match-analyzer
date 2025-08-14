@@ -1,135 +1,189 @@
-<div align="center">
-  <br />
-    <a href="https://www.youtube.com/watch?v=iYOz165wGkQ" target="_blank">
-      <img src="public/readme/hero.webp" alt="Project Banner">
-    </a>
-  <br />
+# AI Resume & Job Match Analyzer
 
-  <div>
-    <img alt="Static Badge" src="https://img.shields.io/badge/React-4c84f3?style=for-the-badge&logo=react&logoColor=white">
-        <img src="https://img.shields.io/badge/-Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-        <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="TypeScript" />
-    <img alt="Static Badge" src="https://img.shields.io/badge/Puter.js-181758?style=for-the-badge&logoColor=white">
-  </div>
+**Built by Jeevan M**
 
-  <h3 align="center">AI Resume Analyzer</h3>
+A powerful full-stack AI SaaS application that revolutionizes the job application process by intelligently matching resumes to job descriptions and providing comprehensive ATS (Applicant Tracking System) scoring with AI-driven improvement suggestions.
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/watch?v=XUkNR-JfHwo" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+![AI Resume Analyzer](public/images/resume-scan.gif)
 
-## 📋 <a name="table">Table of Contents</a>
+## 🚀 Features
 
-1. ✨ [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+- **Smart Resume Analysis**: Upload your resume and get instant AI-powered insights
+- **Job Matching Algorithm**: Compare your resume against specific job descriptions
+- **ATS Score Calculation**: Get detailed scoring based on industry-standard ATS systems
+- **AI Improvement Suggestions**: Receive personalized recommendations to enhance your resume
+- **Real-time Processing**: Fast, in-browser analysis with no backend required
+- **Modern UI/UX**: Clean, responsive design built with React and Tailwind CSS
+- **Secure & Private**: All processing happens client-side, your data stays with you
 
-## 🚨 Tutorial
+## 🛠️ Tech Stack
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Backend**: Puter.js (serverless architecture)
+- **Routing**: React Router
+- **State Management**: Zustand
+- **Build Tool**: Vite
+- **Deployment**: Ready for Vercel, Netlify, or any static hosting
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+## 📋 Prerequisites
 
-<a href="https://www.youtube.com/watch?v=iYOz165wGkQ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+Before running this project, make sure you have:
 
-## <a name="introduction">✨ Introduction</a>
+- Node.js (v18 or higher)
+- npm or yarn package manager
+- Modern web browser with JavaScript enabled
 
-Build an AI-powered Resume Analyzer with React, React Router, and Puter.js! Implement seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. Get custom feedback and ATS scores tailored to each listing—all wrapped in a clean, reusable UI.
+## 🔧 Installation & Setup
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Jeevanm2004/ai-resume-job-match-analyzer.git
+   cd ai-resume-job-match-analyzer
+   ```
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   Add your API keys and configuration:
+   ```env
+   VITE_PUTER_API_KEY=your_puter_api_key_here
+   VITE_AI_API_KEY=your_ai_service_key_here
+   ```
 
-- **[React](https://react.dev/)** is a popular open‑source JavaScript library for building user interfaces using reusable components and a virtual DOM, enabling efficient, dynamic single-page and native apps.
+4. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-- **[React Router v7](https://reactrouter.com/)** is the go‑to routing library for React apps, offering nested routes, data loaders/actions, error boundaries, code splitting, and SSR support—all with a smooth upgrade path from v6.
+5. **Open your browser**
+   Navigate to `http://localhost:5173`
 
-- **[Puter.com](https://jsm.dev/resumind-puter)** is an advanced, open-source internet operating system designed to be feature-rich, exceptionally fast, and highly extensible. Puter can be used as: A privacy-first personal cloud to keep all your files, apps, and games in one secure place, accessible from anywhere at any time.
+## 🎯 Usage
 
-- **[Puter.js](https://jsm.dev/resumind-puterjs)** is a tiny client‑side SDK that adds serverless auth, storage, database, and AI (GPT, Claude, DALL·E, OCR…) straight into your browser app—no backend needed and costs borne by users.
+1. **Upload Your Resume**: Drag and drop your resume (PDF format supported)
+2. **Add Job Description**: Paste the job description you're applying for
+3. **Get Analysis**: Click "Analyze Match" to get comprehensive results
+4. **Review Insights**: 
+   - View your ATS compatibility score
+   - See keyword matching analysis
+   - Get personalized improvement suggestions
+5. **Optimize**: Make recommended changes and re-analyze for better scores
 
-- **[Tailwind CSS](https://tailwindcss.com/)** is a utility-first CSS framework that allows developers to design custom user interfaces by applying low-level utility classes directly in HTML, streamlining the design process.
+## 📁 Project Structure
 
-- **[TypeScript](https://www.typescriptlang.org/)** is a superset of JavaScript that adds static typing, providing better tooling, code quality, and error detection for developers, making it ideal for building large-scale applications.
-
-- **[Vite](https://vite.dev/)** is a fast build tool and dev server using native ES modules for instant startup, hot‑module replacement, and Rollup‑powered production builds—perfect for modern web development.
-
-- **[Zustand](https://github.com/pmndrs/zustand)** is a minimal, hook-based state management library for React. It lets you manage global state with zero boilerplate, no context providers, and excellent performance through selective state subscriptions.
-
-## <a name="features">🔋 Features</a>
-
-👉 **Easy & convenient auth**: Handle authentication entirely in the browser using Puter.js—no backend or setup required.
-
-👉 **Resume upload & storage**: Let users upload and store all their resumes in one place, safely and reliably.
-
-👉 **AI resume matching**: Provide a job listing and get an ATS score with custom feedback tailored to each resume.
-
-👉 **Reusable, modern UI**: Built with clean, consistent components for a great-looking and maintainable interface.
-
-👉 **Code Reusability**: Leverage reusable components and a modular codebase for efficient development.
-
-👉 **Cross-Device Compatibility**: Fully responsive design that works seamlessly across all devices.
-
-👉 **Modern UI/UX**: Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
-
-And many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
-
-```bash
-git clone https://github.com/adrianhajdin/ai-resume-analyzer.git
-cd ai-resume-analyzer
+```
+ai-resume-job-match-analyzer/
+├── app/                    # Main application components
+│   ├── components/         # Reusable React components
+│   ├── lib/               # Utility functions and helpers
+│   ├── routes/            # Route components
+│   └── ...
+├── constants/             # Application constants
+├── public/               # Static assets
+│   ├── images/           # Project images and icons
+│   └── icons/            # SVG icons
+├── types/                # TypeScript type definitions
+├── package.json          # Dependencies and scripts
+├── tsconfig.json         # TypeScript configuration
+├── vite.config.ts        # Vite build configuration
+└── README.md
 ```
 
-**Installation**
+## 🔐 Environment Variables
 
-Install the project dependencies using npm:
+Create a `.env.local` file in the root directory:
 
-```bash
-npm install
+```env
+# Puter.js Configuration
+VITE_PUTER_API_KEY=your_puter_api_key
+
+# AI Service Configuration  
+VITE_AI_API_KEY=your_openai_or_other_ai_key
+
+# App Configuration
+VITE_APP_NAME=AI Resume & Job Match Analyzer
+VITE_APP_URL=http://localhost:5173
 ```
 
-**Running the Project**
+## 🚀 Deployment
 
+### Vercel (Recommended)
 ```bash
-npm run dev
+npm run build
+vercel --prod
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
+### Netlify
+```bash
+npm run build
+# Drag and drop the 'dist' folder to Netlify
+```
 
-## <a name="links">🔗 Assets</a>
+### Docker
+```bash
+docker build -t ai-resume-analyzer .
+docker run -p 3000:3000 ai-resume-analyzer
+```
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/resumind-kit)**.
+## 🤝 Contributing
 
-<a href="https://jsm.dev/resumind-kit" target="_blank">
-  <img src="public/readme/videokit.webp" alt="Video Kit Banner">
-</a>
+Contributions are welcome! Here's how you can help:
 
-## <a name="more">🚀 More</a>
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**Advance your skills with Next.js Pro Course**
+## 📝 License
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-<a href="https://jsm.dev/resumind-courses" target="_blank">
-  <img src="public/readme/jsmpro.webp" alt="Project Banner">
-</a>
+## 👨‍💻 Developer
+
+**Jeevan M**
+- GitHub: [@Jeevanm2004](https://github.com/Jeevanm2004)
+- LinkedIn: [www.linkedin.com/in/jeevanabhi](https://www.linkedin.com/in/jeevanabhi)
+- Email: jeevanm.bit@gmail.com
+
+## 🙏 Acknowledgments
+
+- Built with modern web technologies and best practices
+- Inspired by the need for better job application tools
+- Thanks to the open-source community for amazing libraries and tools
+
+## 📊 Project Status
+
+- ✅ Core functionality implemented
+- ✅ Resume upload and parsing
+- ✅ AI-powered analysis
+- ✅ ATS scoring algorithm
+- 🔄 Continuous improvements and feature additions
+- 📈 Performance optimizations ongoing
+
+## 🔮 Future Enhancements
+
+- [ ] Multiple resume format support (DOCX, TXT)
+- [ ] Bulk job application analysis
+- [ ] Resume template suggestions
+- [ ] Integration with job boards
+- [ ] Mobile app version
+- [ ] Advanced analytics dashboard
+
+---
+
+⭐ **Star this repository if you find it helpful!**
+
+🐛 **Found a bug?** [Report it here](https://github.com/Jeevanm2004/ai-resume-job-match-analyzer/issues)
+
+💡 **Have a feature request?** [Let me know!](https://github.com/Jeevanm2004/ai-resume-job-match-analyzer/discussions)
