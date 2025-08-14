@@ -1,12 +1,35 @@
 {
-  "name": "ai-resume-analyzer",
+  "name": "ai-resume-job-match-analyzer",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
+  "author": "Jeevan M <jeevanm.bit@gmail.com>",
+  "description": "A powerful AI SaaS application that intelligently matches resumes to job descriptions and provides comprehensive ATS scoring with AI-driven improvement suggestions",
+  "homepage": "https://jeevanm2004.github.io/ai-resume-job-match-analyzer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jeevanm2004/ai-resume-job-match-analyzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jeevanm2004/ai-resume-job-match-analyzer/issues"
+  },
+  "keywords": [
+    "ai",
+    "resume",
+    "job-matching",
+    "ats-score",
+    "react",
+    "typescript",
+    "tailwind",
+    "career-tools"
+  ],
+  "license": "MIT",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "deploy": "npm run build && gh-pages -d build/client"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
@@ -27,6 +50,7 @@
     "@types/node": "^20",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "gh-pages": "^5.0.0",
     "tailwindcss": "^4.1.4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5.8.3",
