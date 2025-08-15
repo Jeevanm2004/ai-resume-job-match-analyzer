@@ -3,8 +3,6 @@
 
 A powerful AI-driven application that analyzes resumes using Google Gemini AI, providing comprehensive ATS (Applicant Tracking System) scoring and intelligent improvement suggestions to help job seekers optimize their resumes.
 
-![AI Resume Analyzer](public/images/hero-image.png)
-
 ## 🚀 Features
 
 ✅ **Smart Resume Analysis**: Upload PDF/DOCX resumes and get instant AI-powered insights using Google Gemini  
