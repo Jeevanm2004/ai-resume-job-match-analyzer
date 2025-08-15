@@ -1,23 +1,25 @@
 {
-  "name": "ai-resume-job-match-analyzer",
+  "name": "resumeedge",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "author": "Jeevan M <jeevanm.bit@gmail.com>",
-  "description": "A powerful AI SaaS application that intelligently matches resumes to job descriptions and provides comprehensive ATS scoring with AI-driven improvement suggestions",
-  "homepage": "https://jeevanm2004.github.io/ai-resume-job-match-analyzer",
+  "description": "ResumeEdge - A powerful AI SaaS application that provides smart feedback for your dream job with comprehensive ATS scoring and AI-driven improvement suggestions",
+  "homepage": "https://jeevanm2004.github.io/resumeedge",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jeevanm2004/ai-resume-job-match-analyzer.git"
+    "url": "https://github.com/Jeevanm2004/resumeedge.git"
   },
   "bugs": {
-    "url": "https://github.com/Jeevanm2004/ai-resume-job-match-analyzer/issues"
+    "url": "https://github.com/Jeevanm2004/resumeedge/issues"
   },
   "keywords": [
+    "resumeedge",
     "ai",
     "resume",
     "job-matching",
     "ats-score",
+    "career-feedback",
     "react",
     "typescript",
     "tailwind",
