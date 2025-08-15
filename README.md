@@ -1,29 +1,27 @@
 # AI Resume & Job Match Analyzer
-
 **Built by Jeevan M**
 
-A powerful full-stack AI SaaS application that revolutionizes the job application process by intelligently matching resumes to job descriptions and providing comprehensive ATS (Applicant Tracking System) scoring with AI-driven improvement suggestions.
+A powerful AI-driven application that analyzes resumes using Google Gemini AI, providing comprehensive ATS (Applicant Tracking System) scoring and intelligent improvement suggestions to help job seekers optimize their resumes.
 
-![AI Resume Analyzer](public/images/resume-scan.gif)
+![AI Resume Analyzer](public/images/hero-image.png)
 
 ## 🚀 Features
 
-- **Smart Resume Analysis**: Upload your resume and get instant AI-powered insights
-- **Job Matching Algorithm**: Compare your resume against specific job descriptions
-- **ATS Score Calculation**: Get detailed scoring based on industry-standard ATS systems
-- **AI Improvement Suggestions**: Receive personalized recommendations to enhance your resume
-- **Real-time Processing**: Fast, in-browser analysis with no backend required
-- **Modern UI/UX**: Clean, responsive design built with React and Tailwind CSS
-- **Secure & Private**: All processing happens client-side, your data stays with you
+✅ **Smart Resume Analysis**: Upload PDF/DOCX resumes and get instant AI-powered insights using Google Gemini  
+✅ **ATS Score Calculation**: Get detailed scoring based on industry-standard ATS systems  
+✅ **AI Improvement Suggestions**: Receive personalized recommendations to enhance your resume  
+✅ **Real-time Processing**: Fast analysis with immediate results  
+✅ **Modern UI/UX**: Clean, responsive design built with React and Tailwind CSS  
+✅ **Secure & Private**: Your resume data is processed securely and not stored  
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18, TypeScript, Tailwind CSS
-- **Backend**: Puter.js (serverless architecture)
-- **Routing**: React Router
-- **State Management**: Zustand
-- **Build Tool**: Vite
-- **Deployment**: Ready for Vercel, Netlify, or any static hosting
+**Frontend**: React 18, TypeScript, Vite, Tailwind CSS  
+**AI Integration**: Google Gemini API  
+**File Processing**: PDF-Parse, Mammoth (for DOCX)  
+**Routing**: React Router  
+**Build Tool**: Vite  
+**Deployment**: Ready for Vercel, Netlify, or any static hosting  
 
 ## 📋 Prerequisites
 
@@ -31,7 +29,7 @@ Before running this project, make sure you have:
 
 - Node.js (v18 or higher)
 - npm or yarn package manager
-- Modern web browser with JavaScript enabled
+- Google Gemini API key ([Get one here](https://makersuite.google.com/app/apikey))
 
 ## 🔧 Installation & Setup
 
@@ -44,40 +42,33 @@ Before running this project, make sure you have:
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   Add your API keys and configuration:
+   
+   Create a `.env.local` file in the root directory:
    ```env
-   VITE_PUTER_API_KEY=your_puter_api_key_here
-   VITE_AI_API_KEY=your_ai_service_key_here
+   VITE_GEMINI_API_KEY=your_google_gemini_api_key_here
    ```
 
 4. **Start the development server**
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-5. **Open your browser**
+5. **Open your browser**  
    Navigate to `http://localhost:5173`
 
-## 🎯 Usage
+## 🎯 How to Use
 
-1. **Upload Your Resume**: Drag and drop your resume (PDF format supported)
-2. **Add Job Description**: Paste the job description you're applying for
-3. **Get Analysis**: Click "Analyze Match" to get comprehensive results
-4. **Review Insights**: 
-   - View your ATS compatibility score
-   - See keyword matching analysis
-   - Get personalized improvement suggestions
-5. **Optimize**: Make recommended changes and re-analyze for better scores
+1. **Upload Your Resume**: Click to upload or drag & drop your PDF/DOCX resume
+2. **Get AI Analysis**: The app automatically processes your resume using Google Gemini AI
+3. **Review Results**:
+   - View your overall resume score
+   - See detailed breakdowns for Tone & Style, Content, Structure, and Skills
+   - Get your ATS compatibility score (how well it performs with automated screening)
+4. **Implement Suggestions**: Follow the AI-generated recommendations to improve your resume
+5. **Re-analyze**: Upload your updated resume to see improved scores
 
 ## 📁 Project Structure
 
@@ -85,35 +76,32 @@ Before running this project, make sure you have:
 ai-resume-job-match-analyzer/
 ├── app/                    # Main application components
 │   ├── components/         # Reusable React components
-│   ├── lib/               # Utility functions and helpers
+│   ├── lib/               # Utility functions and API calls
 │   ├── routes/            # Route components
 │   └── ...
 ├── constants/             # Application constants
 ├── public/               # Static assets
-│   ├── images/           # Project images and icons
-│   └── icons/            # SVG icons
 ├── types/                # TypeScript type definitions
+├── .env.local            # Environment variables (create this)
 ├── package.json          # Dependencies and scripts
 ├── tsconfig.json         # TypeScript configuration
-├── vite.config.ts        # Vite build configuration
-└── README.md
+└── vite.config.ts        # Vite build configuration
 ```
 
-## 🔐 Environment Variables
+## 🔐 Environment Setup
 
-Create a `.env.local` file in the root directory:
+**Required Environment Variable:**
 
 ```env
-# Puter.js Configuration
-VITE_PUTER_API_KEY=your_puter_api_key
-
-# AI Service Configuration  
-VITE_AI_API_KEY=your_openai_or_other_ai_key
-
-# App Configuration
-VITE_APP_NAME=AI Resume & Job Match Analyzer
-VITE_APP_URL=http://localhost:5173
+# Google Gemini AI Configuration
+VITE_GEMINI_API_KEY=your_google_gemini_api_key_here
 ```
+
+**How to get your API key:**
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy and paste it into your `.env.local` file
 
 ## 🚀 Deployment
 
@@ -126,14 +114,10 @@ vercel --prod
 ### Netlify
 ```bash
 npm run build
-# Drag and drop the 'dist' folder to Netlify
+# Deploy the 'dist' folder to Netlify
 ```
 
-### Docker
-```bash
-docker build -t ai-resume-analyzer .
-docker run -p 3000:3000 ai-resume-analyzer
-```
+**Important**: Remember to add your `VITE_GEMINI_API_KEY` environment variable in your deployment platform's settings.
 
 ## 🤝 Contributing
 
@@ -147,38 +131,43 @@ Contributions are welcome! Here's how you can help:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👨‍💻 Developer
 
 **Jeevan M**
 - GitHub: [@Jeevanm2004](https://github.com/Jeevanm2004)
-- LinkedIn: [www.linkedin.com/in/jeevanabhi](https://www.linkedin.com/in/jeevanabhi)
+- LinkedIn: [linkedin.com/in/jeevanabhi](https://www.linkedin.com/in/jeevanabhi)
 - Email: jeevanm.bit@gmail.com
+
+## 📊 Current Status (Phase 2 Complete!)
+
+✅ **AI Integration**: Fully integrated with Google Gemini API  
+✅ **Resume Processing**: Supports PDF and DOCX file formats  
+✅ **Dynamic Analysis**: Real-time AI-powered resume analysis  
+✅ **ATS Scoring**: Intelligent scoring algorithm  
+✅ **Modern UI**: Clean, responsive React interface  
+✅ **Production Ready**: Ready for deployment and real-world use  
+
+## 🔮 Future Enhancements (Phase 3+)
+
+🔄 **Planned Features**:
+- Job description matching and comparison
+- Multiple resume format support (TXT, images)
+- Resume improvement suggestions with before/after comparisons
+- Batch processing for multiple resumes
+- Advanced analytics dashboard
+- Integration with job boards
+
+## 🎉 Demo
+
+Try the live application: [Add your deployment URL here]
 
 ## 🙏 Acknowledgments
 
-- Built with modern web technologies and best practices
+- Built with Google Gemini AI for intelligent resume analysis
+- Thanks to the React and TypeScript community
 - Inspired by the need for better job application tools
-- Thanks to the open-source community for amazing libraries and tools
-
-## 📊 Project Status
-
-- ✅ Core functionality implemented
-- ✅ Resume upload and parsing
-- ✅ AI-powered analysis
-- ✅ ATS scoring algorithm
-- 🔄 Continuous improvements and feature additions
-- 📈 Performance optimizations ongoing
-
-## 🔮 Future Enhancements
-
-- [ ] Multiple resume format support (DOCX, TXT)
-- [ ] Bulk job application analysis
-- [ ] Resume template suggestions
-- [ ] Integration with job boards
-- [ ] Mobile app version
-- [ ] Advanced analytics dashboard
 
 ---
 
