@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+/* Enhanced typography with additional font options */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
+
 @theme {
-  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Typography Updates - Choose your preferred font stack */
+  --font-sans: "Inter", "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Alternative font options: */
+  /* --font-sans: "Poppins", "Mona Sans", ui-sans-serif, system-ui, sans-serif; */
+  /* --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif; */
+  
   --color-dark-200: #475467;
-  /* Updated light blue colors for fresh theme */
   --color-light-blue-100: #e0f2fe1a;
   --color-light-blue-200: #bae6fd4d;
-  /* Updated badge colors to match blue/teal theme */
   --color-badge-green: #d1fae5;
   --color-badge-red: #fee2e2;
   --color-badge-yellow: #fef3c7;
@@ -16,121 +23,222 @@
   --color-badge-red-text: #991b1b;
   --color-badge-yellow-text: #92400e;
 }
+
 html,
 body {
   @apply bg-white;
 }
+
 main {
   @apply min-h-screen pt-10;
 }
+
+/* Enhanced Typography */
 h1 {
-  @apply text-6xl  text-gradient leading-tight tracking-[-2px] font-semibold;
+  @apply text-6xl text-gradient leading-tight tracking-[-2px] font-bold;
+  /* Enhanced with better letter spacing and weight */
 }
+
 h2 {
-  @apply text-3xl text-dark-200;
+  @apply text-3xl text-dark-200 font-semibold;
+  /* Added font weight for better hierarchy */
 }
+
+h3 {
+  @apply text-xl text-gray-600 font-medium;
+  /* New h3 styling for better content hierarchy */
+}
+
 label {
-  @apply text-dark-200;
+  @apply text-dark-200 font-medium text-sm tracking-wide;
+  /* Enhanced labels with better typography */
 }
+
 input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white font-medium transition-all duration-200 focus:shadow-lg;
+  /* Enhanced with transitions and better focus states */
 }
+
 textarea {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white font-medium transition-all duration-200 focus:shadow-lg;
+  /* Enhanced with transitions and better focus states */
 }
+
 form {
   @apply flex flex-col items-start gap-8 w-full;
 }
+
 @layer components {
+  /* Logo Styling Options */
+  .logo-text {
+    @apply text-2xl font-bold text-gradient tracking-tight;
+    /* Modern, clean logo text */
+  }
+  
+  .logo-text-enhanced {
+    @apply text-3xl font-black text-gradient tracking-tighter;
+    /* Bold, impactful logo text alternative */
+  }
+  
+  .logo-icon {
+    @apply transition-transform duration-200 hover:scale-105;
+    /* Subtle hover animation for logo icon */
+  }
+
+  /* Enhanced Gradients */
   .text-gradient {
-    /* Updated text gradient: Blue to teal to darker blue */
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] via-[#06B6D4] to-[#1E40AF];
   }
+  
+  .text-gradient-icon {
+    filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.3));
+  }
+
   .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
+    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl transition-all duration-300 hover:shadow-lg;
+    /* Added hover effects */
   }
+
+  /* Enhanced Buttons */
   .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
+    @apply primary-gradient text-white rounded-full px-6 py-3 cursor-pointer w-full font-semibold text-sm tracking-wide transition-all duration-200 hover:shadow-xl hover:scale-105;
+    /* Enhanced with better padding, font weight, and hover effects */
   }
+
+  /* UI Theme Improvements */
   .resume-nav {
-    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
+    @apply flex flex-row justify-between items-center p-6 border-b border-gray-100;
+    /* Increased padding and lighter border */
   }
+
   .resume-summary {
-    @apply flex flex-row items-center justify-center p-4 gap-4;
+    @apply flex flex-row items-center justify-center p-6 gap-6;
+    /* Increased spacing */
     .category {
-      @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
+      @apply flex flex-row gap-3 items-center bg-gray-50 rounded-2xl p-5 w-full justify-between transition-all duration-200 hover:bg-gray-100 hover:shadow-md;
+      /* Enhanced with hover states and better padding */
     }
   }
+
   .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
+    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-xl p-3 shadow-sm font-medium text-sm transition-all duration-200 hover:border-gray-300 hover:shadow-md;
+    /* Enhanced with better typography and hover states */
   }
+
   .auth-button {
-    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
+    @apply primary-gradient rounded-full py-5 px-10 cursor-pointer w-[600px] max-md:w-full text-3xl font-bold text-white transition-all duration-200 hover:shadow-2xl hover:scale-105;
+    /* Enhanced with better font weight and hover effects */
   }
+
   .main-section {
-    @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
+    @apply flex flex-col items-center gap-10 pt-16 mx-15 pb-8;
+    /* Increased spacing for better breathing room */
   }
+
   .page-heading {
-    @apply flex flex-col items-center gap-8 max-w-4xl text-center;
+    @apply flex flex-col items-center gap-6 max-w-4xl text-center;
+    /* Optimized spacing */
   }
+
   .resumes-section {
-    @apply flex flex-wrap max-lg:flex-col gap-6 items-start  w-full max-w-[1850px] justify-evenly;
+    @apply flex flex-wrap max-lg:flex-col gap-8 items-start w-full max-w-[1850px] justify-evenly;
+    /* Increased gap for better visual separation */
   }
+
+  /* Enhanced Resume Cards */
   .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
+    @apply flex flex-col gap-6 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-3xl p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border border-gray-50;
+    /* Enhanced with hover effects, better padding, subtle border, and larger border radius */
   }
+
   .resume-card-header {
-    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
+    @apply flex flex-row gap-3 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
+    /* Increased gap for better spacing */
   }
+
   .feedback-section {
-    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+    @apply flex flex-col gap-6 w-1/2 px-10 max-lg:w-full py-8;
+    /* Increased padding and spacing */
   }
+
+  /* Enhanced Navbar */
   .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    @apply flex flex-row justify-between items-center bg-white/95 backdrop-blur-md rounded-full p-5 w-full px-12 max-w-[1200px] mx-auto border border-gray-100 shadow-lg;
+    /* Enhanced with backdrop blur, better padding, subtle border, and shadow */
   }
+
   .score-badge {
-    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
+    @apply flex flex-row items-center justify-center py-2 px-3 gap-4 rounded-full font-semibold text-sm;
+    /* Enhanced typography */
   }
+
   .form-div {
-    @apply flex flex-col gap-2 w-full items-start;
+    @apply flex flex-col gap-3 w-full items-start;
+    /* Increased gap */
   }
+
   .uplader-drag-area {
-    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
+    @apply relative p-10 text-center transition-all duration-700 cursor-pointer bg-white rounded-3xl min-h-[208px] border-2 border-dashed border-gray-200 hover:border-blue-300 hover:bg-blue-50/30;
+    /* Enhanced with dashed border, hover states, and larger border radius */
   }
+
   .uploader-selected-file {
-    @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+    @apply flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-200;
+    /* Added subtle border */
   }
 }
+
+/* Enhanced Utilities */
 @utility bg-gradient {
-  /* Updated background gradient: Light blue to soft teal */
   background: linear-gradient(to bottom, #f0f9ff 60%, #06b6d4cc);
 }
+
 @utility text-gradient {
-  /* Updated text gradient: Blue to teal to darker blue */
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] via-[#06B6D4] to-[#1E40AF];
 }
+
 @utility gradient-hover {
-  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 hover:from-light-blue-200 hover:to-light-blue-100;
+  /* Enhanced hover gradient effect */
 }
+
 @utility primary-gradient {
-  /* Updated primary gradient: Fresh blue to teal */
   background: linear-gradient(to bottom, #3B82F6, #06B6D4);
-  box-shadow: 0px 74px 21px 0px #3b82f600;
+  box-shadow: 0px 20px 40px rgba(59, 130, 246, 0.3);
+  /* Enhanced shadow */
 }
+
 @utility primary-gradient-hover {
-  /* Updated hover gradient: Slightly darker blue to teal */
   background: linear-gradient(to bottom, #2563EB, #0891B2);
+  box-shadow: 0px 25px 50px rgba(37, 99, 235, 0.4);
+  /* Enhanced hover shadow */
 }
+
 @utility inset-shadow {
-  /* Updated shadow: Blue tint instead of purple */
   box-shadow: inset 0 0 12px 0 rgba(59, 130, 246, 0.2);
   backdrop-filter: blur(10px);
 }
+
+/* Enhanced Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* New smooth scaling animation for cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
