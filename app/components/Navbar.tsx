@@ -24,7 +24,7 @@ const Navbar = () => {
                             </defs>
                         </svg>
                     </div>
-                    <span className="logo-text">RESUMIND</span>
+                    <span className="logo-text">ResumeEdge</span>
                 </div>
                 
                 {/* Option 3: Text-only with enhanced styling */}
