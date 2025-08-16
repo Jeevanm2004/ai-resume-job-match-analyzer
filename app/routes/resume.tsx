@@ -25,27 +25,33 @@ const Resume = () => {
     useEffect(() => {
         const loadResume = async () => {
             const resume = await kv.get(`resume:${id}`);
-
             if(!resume) return;
-
+            
             const data = JSON.parse(resume);
-
             const resumeBlob = await fs.read(data.resumePath);
             if(!resumeBlob) return;
-
+            
             const pdfBlob = new Blob([resumeBlob], { type: 'application/pdf' });
             const resumeUrl = URL.createObjectURL(pdfBlob);
             setResumeUrl(resumeUrl);
-
-            const imageBlob = await fs.read(data.imagePath);
-            if(!imageBlob) return;
-            const imageUrl = URL.createObjectURL(imageBlob);
-            setImageUrl(imageUrl);
-
+            
+            // Try to load image, but don't fail if it doesn't exist
+            if (data.imagePath) {
+                try {
+                    const imageBlob = await fs.read(data.imagePath);
+                    if (imageBlob) {
+                        const imageUrl = URL.createObjectURL(imageBlob);
+                        setImageUrl(imageUrl);
+                    }
+                } catch (error) {
+                    console.log('Image not available, will show PDF instead');
+                }
+            }
+            
             setFeedback(data.feedback);
             console.log({resumeUrl, imageUrl, feedback: data.feedback });
         }
-
+        
         loadResume();
     }, [id]);
 
@@ -58,16 +64,35 @@ const Resume = () => {
                 </Link>
             </nav>
             <div className="flex flex-row w-full max-lg:flex-col-reverse">
-                <section className="feedback-section bg-[url('/images/bg-small.svg') bg-cover h-[100vh] sticky top-0 items-center justify-center">
-                    {imageUrl && resumeUrl && (
+                <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-[100vh] sticky top-0 items-center justify-center">
+                    {resumeUrl && (
                         <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-wxl:h-fit w-fit">
-                            <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                                <img
-                                    src={imageUrl}
-                                    className="w-full h-full object-contain rounded-2xl"
-                                    title="resume"
-                                />
-                            </a>
+                            {imageUrl ? (
+                                <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src={imageUrl}
+                                        className="w-full h-full object-contain rounded-2xl"
+                                        title="resume preview"
+                                    />
+                                </a>
+                            ) : (
+                                <div className="flex flex-col items-center justify-center h-full p-8 bg-gray-100 rounded-2xl min-h-[400px]">
+                                    <div className="text-gray-600 mb-4">
+                                        <svg className="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-gray-600 text-center mb-4">Preview not available</p>
+                                    <a 
+                                        href={resumeUrl} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+                                    >
+                                        Open PDF
+                                    </a>
+                                </div>
+                            )}
                         </div>
                     )}
                 </section>
@@ -87,4 +112,5 @@ const Resume = () => {
         </main>
     )
 }
+
 export default Resume
